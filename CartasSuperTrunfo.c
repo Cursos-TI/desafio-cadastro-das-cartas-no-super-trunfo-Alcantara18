@@ -13,6 +13,7 @@ int main() {
   printf("Desafio Super Trunfo Países\n");
   printf("Tema 1 Cadastro das Cartas\n");
 
+
  char estado[20];
  char codigo[20];
  char cidade[20];
@@ -20,6 +21,8 @@ int main() {
  float área;
  float PIB;
  int PT;
+
+
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -46,6 +49,8 @@ int main() {
     printf("Digite os PontosTuristicos:  \n");
     scanf("%d", &PT);
 
+     float densidadepop  = (float) população / área;
+     float pibperca = (float) PIB / população;
 
     
     // Exibição dos Dados das Cartas:
@@ -59,6 +64,8 @@ int main() {
     printf("Área: %.3f km²\n", área),
     printf("PIB: %.3f\n", PIB);
     printf("Números de Pontos Turisticos: %d\n", PT );
+    printf("Densidade Populacional: %f\n", densidadepop);
+    printf("PIB per Capita: %f\n", pibperca);
 
     printf("Digite o estado:  \n");
     scanf("%s", &estado);
@@ -81,6 +88,8 @@ int main() {
     printf("Digite os PontosTuristicos:  \n");
     scanf("%d", &PT);
 
+     float densidadePop  = (float) população / área;
+     float PibPerCa = (float) PIB / população;
 
     printf("Estado: %s\n", estado);
     printf("Código: %s\n", codigo);
@@ -89,6 +98,8 @@ int main() {
     printf("Área: %.3f km²\n", área),
     printf("PIB: %.3f\n", PIB);
     printf("Números de Pontos Turisticos: %d\n", PT );
+    printf("Densidade Populacional: %f\n", densidadePop);
+    printf("PIB per Capita: %f\n", PibPerCa);
 
     return 0;
 
