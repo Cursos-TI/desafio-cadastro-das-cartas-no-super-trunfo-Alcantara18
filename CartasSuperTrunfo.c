@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -66,6 +68,9 @@ int main() {
  SPA = populaçãoA + areaA + PIBA + PTA + DePOA + PPCA;
  SPB = populaçãoB + areaB + PIBB + PTB + DePoB + PPCB;
 
+ int atributo1, atributo2;
+ srand(time(0));
+
 
 
     // Cadastro das Cartas:
@@ -104,47 +109,134 @@ int main() {
     printf("Densidade Populacional: %.2f\n", DePoB);
     printf("PIB per Capita: %.2f\n", PPCB);
     printf("Super Poder: %.2f\n", SPB);
+    
+  //Menu Interativo
+    printf("***Jogo Cartas Super Trunfo***\n");
+    printf("Escolha uma opção: \n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos turisticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("6. PIB per Capita\n");
+    printf("7. Super Poder\n");
+    printf("Escolha: ");
+    scanf("%d", &atributo1);
 
-    if(populaçãoA > populaçãoB){
-      printf("População: Carta 1 Venceu!\n");
-    }else{
-      printf("População: Carta 2 Venceu!\n");
-    }
+    
 
-    if (areaA > areaB){
-      printf("Área: Carta 1 Venceu!\n");
-    }else{
-      printf("Área: Carta 2 Venceu!\n");
-    }
+    switch (atributo1)
+    {
+      case 1:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("População\n");
+      printf("%s: %u\n", estadoA , populaçãoA);
+      printf("%s: %u\n",estadoB , populaçãoB);
 
-    if(PIBA > PIBB){
-      printf("PIB: Carta 1 Venceu!\n");
-    }else{
-      printf("PIB: Carta 2 Venceu!\n");
-    }
+      if(populaçãoA == populaçãoB){
+        printf("Empate\n");
+      }else if(populaçãoA > populaçãoB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
 
-    if(PTA > PTB){
-      printf("Pontos Turísticos: Carta 1 Venceu!\n");
-    }else{
-      printf("Pontos Turísticos: Carta 2 Venceu!\n");
-    }
 
-    if(DePOA > DePoB){
-      printf("Densidade Populacional: Carta 1 Venceu!\n");
-    }else{
-      printf("Densidade Populacional: Carta 2 Venceu!\n");
-    }
+      break;
+      
+      case 2:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("Área\n");
+      printf("%s: %.3f km²\n", estadoA , areaA);
+      printf("%s: %.3f km²\n",estadoB , areaB);
 
-    if(PPCA > PPCB){
-      printf("PIB per Capita: Carta 1 Venceu!\n");
-    }else{
-      printf("PIB per Capita: Carta 2 Venceu!\n");
-    }
+      if(areaA == areaB){
+        printf("Empate\n");
+      }else if(areaA > areaB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
 
-    if(SPA > SPB){
-      printf("Super Poder: Carta 1 Venceu!\n");
-    }else{
-      printf("Super Poder: Carta 2 Venceu!\n");
+      case 3:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("PIB\n");
+      printf("%s: %.3f\n", estadoA , PIBA);
+      printf("%s: %.3f\n",estadoB , PIBB);
+
+      if(PIBA == PIBB){
+        printf("Empate\n");
+      }else if(PIBA > PIBB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
+
+      case 4:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("Pontos turisticos\n");
+      printf("%s: %d\n", estadoA , PTA);
+      printf("%s: %d\n",estadoB , PTB);
+
+      if(PTA == PTB){
+        printf("Empate");
+      }else if(PTA > PIBB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
+
+      case 5:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("Densidade Populacional\n");
+      printf("%s: %.2f\n", estadoA , DePOA);
+      printf("%s: %.2f\n",estadoB , DePoB);
+
+      if(DePOA == DePoB){
+        printf("Empate\n");
+      }else if(DePOA < DePoB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
+
+      case 6:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("PIB per Capita\n");
+      printf("%s: %.2f\n", estadoA , PPCA);
+      printf("%s: %.2f\n",estadoB , PPCB);
+
+      if(PPCA == PPCB){
+        printf("Empate");
+      }else if(PPCA > PPCB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
+
+      case 7:
+      printf("%s x %s\n", estadoA , estadoB);
+      printf("Super Poder\n");
+      printf("%s: %.2f\n", estadoA , SPA);
+      printf("%s: %.2f\n",estadoB , SPB);
+
+      if(SPA == SPB){
+        printf("Empate\n");
+      }else if(SPA > SPB){
+        printf("Carta 1 Venceu!\n");
+      }else{
+        printf("Carta 2 Venceu!\n");
+      }
+      break;
+
+     default:
+     printf("Opção Inválida\n");
+      break;
     }
 
 
